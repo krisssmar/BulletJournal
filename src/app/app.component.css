@@ -7,8 +7,7 @@
   src: url(src/font/BulletJournal.ttf);
 }
 body{
-  background: #d4cabe url(src/image/fon.jpg);
-  background-size: contain;
+  background: #d4cabe;
 }
 .main-header{
   padding: 20px;
