@@ -1,0 +1,84 @@
+@font-face {
+  font-family: BulletJournal;
+  src: url(src/font/Sweetboys.ttf);
+}
+@font-face {
+  font-family: BulletJournal2;
+  src: url(src/font/BulletJournal.ttf);
+}
+body{
+  background: #d4cabe url(src/image/fon.jpg);
+  background-size: contain;
+}
+.main-header{
+  padding: 20px;
+  font-size: 20px;
+  background: rgb(89,89,77);
+}
+.main-header > .login{
+  float: right;
+}
+.login > a{
+  text-decoration: none;
+  color: wheat;
+}
+.login > a:hover
+{
+  text-decoration: underline;
+  color: wheat;
+}
+.vertical{
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+}
+.container{
+  display: flex;
+  width: 100%;
+}
+.sidebar{
+  width: 20%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar > .menu-button{
+  display: block;
+  width: 100%;
+  background: rgb(175, 161,148);
+  padding: 14px 20px;
+  text-align: center;
+  border: rgb(175, 161,148) 1px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-family: BulletJournal2, 'Bullet Journal', cursive;
+  font-size: 220%;
+}
+.sidebar > .menu-button:hover{
+  background: rgb(89,89,77);
+  border: rgb(89,89,77) 1px;
+  /*background: rgb(159,149,139);*/
+}
+.main-section{
+  width: 80%;
+  height: 100%;
+  background: #fc0 url(src/image/1.jpg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivation > h1 {
+  font-family: BulletJournal, 'Bullet Journal', cursive;
+  font-size: 550%;
+  position: absolute;
+  top: 30%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.motivation{
+  height: 550px;
+  color: whitesmoke;
+}
