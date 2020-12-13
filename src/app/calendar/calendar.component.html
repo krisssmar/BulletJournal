@@ -20,7 +20,14 @@
      <div class="curMonth" id="curMonth"></div>
      <div class="nextMonth"><button (click)="ClickButton(1)"  class="next">&#8250;</button></div>
    </div>
-   <div class="toolbar"></div>
+   <div class="toolbar">
+     <div class="message">
+       <p>The goal for the month is to save $<span id = variable></span></p>
+       <button class="editButton" (click)="EditButton()">🖉</button>
+     </div>
+     <div class="edit" id="edit">
+     </div>
+   </div>
   </div>
 </div>
 </body>
