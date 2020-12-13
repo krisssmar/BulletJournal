@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+</head>
+<body>
+<header class="main-header">
+  <div class="login vertical"> <a routerLink="/login"> Login </a> </div>
+</header>
+<div class="container">
+  <div class="sidebar">
+    <button routerLink="/calendar" class="menu-button">Calendar</button>
+    <button routerLink="/books_and_films" class="menu-button">Books and Films</button>
+    <button routerLink="/goals" class="menu-button">Goals</button>
+  </div>
+  <div class="main-section" >
+   <div class="calendar">
+     <div class="prevMonth"><button onclick="ClickButton(1)" class="previous">&#8249;</button></div>
+     <div class="curMonth" id="curMonth"></div>
+     <div class="nextMonth"><button onclick="calendar(1)"  class="next">&#8250;</button></div>
+   </div>
+   <div class="toolbar"></div>
+  </div>
+</div>
+</body>
+</html>
+

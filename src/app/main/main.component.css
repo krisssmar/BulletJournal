@@ -1,0 +1,98 @@
+
+@font-face {
+  font-family: BulletJournal;
+  src: url(src/font/Sweetboys.ttf);
+}
+@font-face {
+  font-family: BulletJournal2;
+  src: url(src/font/BulletJournal.ttf);
+}
+body{
+  background: #d4cabe;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main-header{
+  border: solid 2px rgb(89,89,77);
+  padding: 15px;
+  font-size: 30px;
+  background: rgb(89,89,77);
+}
+.main-header > .login{
+  float: right;
+}
+.login > a{
+  text-decoration: none;
+  color: wheat;
+}
+.login > a:hover
+{
+  text-decoration: underline;
+  color: wheat;
+}
+.vertical{
+  top: 40%;
+}
+.container{
+  height: 94%;
+  display: flex;
+  width: 100%;
+}
+.sidebar{
+  margin-top: 5px;
+  width: 10%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar > .menu-button{
+  display: block;
+  margin-left: 10px;
+  width: 100%;
+  background: rgb(175, 161,148);
+  padding-bottom: 80px;
+  border: solid 2px rgb(89,89,77);
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  font-family: BulletJournal2, 'Bullet Journal', cursive;
+  font-size: 220%;
+  outline: none;
+}
+.sidebar > .menu-button:hover{
+  background: rgb(89,89,77);
+}
+p{
+  writing-mode: tb-rl;
+  transform:rotate(180deg);
+}
+.main-section{
+  width: 90%;
+  border: solid 2px rgb(89,89,77);
+  margin-top: 5px;
+  margin-bottom: 1px;
+  background: rgb(175, 161,148) url(src/image/1.jpg) no-repeat;
+  background-size: 99% 99%;
+  background-position-x: 7px;
+  background-position-y: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.motivation > h1 {
+  font-family: BulletJournal, 'Bullet Journal', cursive;
+  font-size: 550%;
+  position: absolute;
+  top: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.motivation{
+  height: 550px;
+  color: whitesmoke;
+}

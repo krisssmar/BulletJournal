@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+</head>
+<body>
+<header class="main-header">
+  <div class="login vertical"> <a routerLink="/login"> Login </a> </div>
+</header>
+<div class="container">
+  <div class="sidebar">
+    <button routerLink="/calendar" class="menu-button">Calendar</button>
+    <button routerLink="/books_and_films" class="menu-button">Books and Films</button>
+    <button routerLink="/goals" class="menu-button">Goals</button>
+  </div>
+  <div class="main-section" >
+    <div class="form">
+      <form>
+        <p><b>NAME:</b><br>
+          <input required type="text" size="40"> <!--#title можно использовать как переменную -->
+        </p>
+        <p><b>PASSWORD:</b><br>
+          <input type="password" size="40">
+        </p>
+        <p><button  type="submit"> OK </button>
+          <button  routerLink="/"> Cancel </button></p>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>
