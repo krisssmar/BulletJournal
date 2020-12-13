@@ -7,24 +7,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  public i = 0; // начальная точка отсчета месяца
   constructor() {
   }
   ngOnInit(): void {
-    this.calendar(0);
+    this.calendar(this.i);
   }
   calendar(i: number): void {
     const d = new Date();
     let year = d.getFullYear();
     let month = d.getUTCMonth() + i;
-    if (month === 13) {
-      month = 1;
+    if (month > 11) {
+      month = month % 12;
       year += 1;
     }
-    else if (month === 0){
-      month = 12;
+    else if (month < 0){
+      month = month + 12;
       year -= 1;
     }
-    alert(month + year);
+    alert(month);
     const firstDay = new Date(year, month, 1);
     const firstWday = firstDay.getDay();
     const nextMonth = new Date(year, month + 1, 1).getMonth();
@@ -47,6 +48,7 @@ export class CalendarComponent implements OnInit {
       '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>' +
       '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>' +
       '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>' +
+      '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>' +
       '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>';
     const day = document.getElementById('weekday');
     day.style.color = 'white';
@@ -64,14 +66,17 @@ export class CalendarComponent implements OnInit {
       tdD[j].style.borderBottom = 'solid 2px rgb(89,89,77)';
       tdD[j].style.borderTop = 'solid 2px rgb(89,89,77)';
     }
-    for (let k = 0; k <= lastDate + 1; k++) {
+    for (let k = 0; k < lastDate + firstWday; k++) {
       if (k >= firstWday) {
-        tdD[7 + k + 1].innerHTML = String(k + 1 - firstWday);
+        tdD[8 + k].innerHTML = String(k + 1 - firstWday);
       }
     }
   }
   ClickButton(i: number): void { // параметры +1 и -1
-   this.calendar(i);
+    const mainSection = document.getElementById('curMonth');
+    mainSection.innerHTML = '';
+    this.i += i;
+    this.calendar(this.i);
   }
 }
 

@@ -16,9 +16,9 @@
   </div>
   <div class="main-section" >
    <div class="calendar">
-     <div class="prevMonth"><button onclick="ClickButton(1)" class="previous">&#8249;</button></div>
+     <div class="prevMonth"><button (click)="ClickButton(-1)" class="previous">&#8249;</button></div>
      <div class="curMonth" id="curMonth"></div>
-     <div class="nextMonth"><button onclick="calendar(1)"  class="next">&#8250;</button></div>
+     <div class="nextMonth"><button (click)="ClickButton(1)"  class="next">&#8250;</button></div>
    </div>
    <div class="toolbar"></div>
   </div>
