@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CreateUserService, User} from '../create-user.service';
 
 
 @Component({
@@ -7,14 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./calendar.component.css']
 })
 export class CalendarComponent implements OnInit {
+  public user: User[];
   public i = 0; // начальная точка отсчета месяцев
   totalMoney = 123;
-  constructor() {
+  constructor(private service: CreateUserService) {
+    this.user = [];
   }
+
   ngOnInit(): void {
     document.getElementById('variable').innerHTML = String(this.totalMoney);
     this.calendar(this.i);
+
+    //???
+    this.service.getDayList().subscribe(x => {
+
+    });
   }
+
   calendar(i: number): void {
     const d = new Date();
     let year = d.getFullYear();
@@ -22,8 +32,7 @@ export class CalendarComponent implements OnInit {
     if (month > 11) {
       month = month % 12;
       year += 1;
-    }
-    else if (month < 0){
+    } else if (month < 0) {
       month = month + 12;
       year -= 1;
     }
@@ -37,7 +46,7 @@ export class CalendarComponent implements OnInit {
     dayTable.id = 'Calendar';
     mainSection.appendChild(dayTable);
     dayTable.style.fontFamily = 'BulletJournal2, \'Bullet Journal\', cursive';
-   // dayTable.style.textAlign = 'center';
+    // dayTable.style.textAlign = 'center';
     dayTable.style.border = 'solid 2px rgb(89,89,77)';
     dayTable.style.borderSpacing = '0px';
     dayTable.style.width = '100%';
@@ -63,23 +72,23 @@ export class CalendarComponent implements OnInit {
     tdD[0].style.fontFamily = 'BulletJournal, \'Bullet Journal\', cursive';
     tdD[0].style.color = 'wheat';
     tdD[0].style.fontSize = '50px';
-    for (let j = 1; j <= 7; j++){
+    for (let j = 1; j <= 7; j++) {
       tdD[j].style.borderBottom = 'solid 2px rgb(89,89,77)';
       tdD[j].style.borderTop = 'solid 2px rgb(89,89,77)';
       tdD[j].style.textAlign = 'center';
     }
-    for (let j = 8; j <= 49; j++){
+    for (let j = 8; j <= 49; j++) {
       tdD[j].style.paddingLeft = '30px';
       tdD[j].style.fontSize = '30px';
     }
     for (let k = 0; k < lastDate + firstWday; k++) {
       if (k >= firstWday) {
-        tdD[8 + k].innerHTML = '<button class="day">' + String(k + 1 - firstWday) + '</button>';
+        tdD[8 + k].innerHTML = '<button class="day">' + String(k + 1 - firstWday) + '</button>'; // [routerLink]="['/', 'attend', day.id]" тут должна быть маршрутизация
       }
     }
     // кнопки
-    const dDay = document.getElementsByClassName('day') as HTMLCollectionOf<HTMLElement>;;
-    for (let j = 0; j <= 41; j++){
+    const dDay = document.getElementsByClassName('day') as HTMLCollectionOf<HTMLElement>;
+    for (let j = 0; j <= 41; j++) {
       dDay[j].style.width = '100%';
       dDay[j].style.height = '100%';
       dDay[j].style.backgroundColor = '#d4cabe';
@@ -89,6 +98,7 @@ export class CalendarComponent implements OnInit {
       dDay[j].style.outline = 'none';
     }
   }
+
   ClickButton(i: number): void { // параметры +1 и -1
     const mainSection = document.getElementById('curMonth');
     mainSection.innerHTML = '';
@@ -96,16 +106,25 @@ export class CalendarComponent implements OnInit {
     this.calendar(this.i);
   }
 
+
   EditButton(): void {
     const mainSection = document.getElementById('edit');
-    const editForm = document.createElement('form');
-    mainSection.appendChild(editForm);
-    editForm.innerHTML = '<input id="editValue"></input><button (click)="SaveButton()">Save</button>';
+    const editValue = document.createElement('input');
+    const editButton = document.createElement('button');
+    mainSection.appendChild(editValue);
+    mainSection.appendChild(editButton);
+    editValue.id = 'editValue';
+    editValue.value = String(this.totalMoney);
+    editButton.style.width = '50px';
+    editButton.style.height = '50px';
+    editButton.innerHTML = 'Edit';
+    editButton.setAttribute('onclick', 'saveButton()');
+    editButton.onclick = () => {
+      const editForm = document.getElementById('editValue');
+      alert();
+      const editSection = document.getElementById('edit');
+      editSection.innerHTML = '';
+    };
   }
 
-  SaveButton(): void{
-    // ????????
-  }
 }
-
-

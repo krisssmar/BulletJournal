@@ -65,6 +65,7 @@ body{
 .sidebar > .menu-button:hover{
   background: rgb(89,89,77);
 }
+
 .main-section{
   width: 90%;
   border: solid 2px rgb(89,89,77);
@@ -75,64 +76,4 @@ body{
   justify-content: center;
   align-items: center;
 }
-.form {
-  width: 300px;
-  padding: 32px;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgb(89,89,77);
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  border: solid 2px rgb(89,89,77);
-  margin-top: -15%;
-  background-color: #d4cabe;
-}
-.formTitle {
-  text-align: center;
-  margin: 0 0 32px 0;
-  font-weight: normal;
-  color: rgb(89,89,77);
-}
-.formButton {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-family: sans-serif;
-  letter-spacing: 1px;
-  font-size: 16px;
-  color: wheat;
-  background-color: rgb(89,89,77);
-  outline: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.formGroup {
-  position: relative;
-  margin-bottom: 32px;
-}
-.formInput {
-  width: 100%;
-  padding: 0 0 10px 0;
-  border: none;
-  border-bottom: 1px solid rgb(89,89,77);
-  background-color: transparent;
-  outline: none;
-  transition: 0.3s;
-}
-.formButton:focus, .formButton:hover{
-  background-color: wheat;
-  color:rgb(89,89,77);
-}
-.formInput:focus {
-  border-bottom: 1px solid rgb(89,89,77);
-}
-.formInput:focus {
-  top: -18px;
-  font-size:16px;
-  color: black;
-}
-.formInput::placeholder {
-  top: -18px;
-  font-size:12px;
-  color: rgb(89,89,77);
-  transition: 0.3s;
-}
+

@@ -9,6 +9,7 @@ import { MainComponent } from './main/main.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { GoalsComponent } from './goals/goals.component';
 import { LoginComponent } from './login/login.component';
+import { DayComponent } from './day/day.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { LoginComponent } from './login/login.component';
     CalendarComponent,
     GoalsComponent,
     LoginComponent,
+    DayComponent,
   ],
     imports: [
         BrowserModule,

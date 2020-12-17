@@ -5,6 +5,7 @@ import {MainComponent} from './main/main.component';
 import {CalendarComponent} from './calendar/calendar.component';
 import {GoalsComponent} from './goals/goals.component';
 import {LoginComponent} from './login/login.component';
+import {DayComponent} from './day/day.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path : 'calendar', component: CalendarComponent},
   {path : 'goals', component: GoalsComponent},
   {path : 'login', component: LoginComponent},
+  {path : 'day/:id', component: DayComponent},
 ];
 
 @NgModule({
